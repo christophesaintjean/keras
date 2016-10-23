@@ -49,8 +49,8 @@ def binary_crossentropy(y_true, y_pred):
 
 
 def kullback_leibler_divergence(y_true, y_pred):
-    y_true = K.clip(y_true, K.epsilon(), 1)
-    y_pred = K.clip(y_pred, K.epsilon(), 1)
+    y_true = K.clip(y_true, K.epsilon(), np.inf)
+    y_pred = K.clip(y_pred, K.epsilon(), np.inf)
     return K.sum(y_true * K.log(y_true / y_pred), axis=-1)
 
 
